@@ -1,0 +1,27 @@
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    int n,p;
+    cin>>n;
+    cin>>p;
+    double ans=0;
+    //integer part
+    for(int i=1;i*i<=n;i++){
+        ans=i;
+    }
+    //decimal part
+    double inc=0.1;
+    for(int place=1;place<=p;place++){
+        while((ans+inc)*(ans+inc)<=n){
+            ans=ans+inc;
+        }
+        inc=inc/10;
+    }
+    cout<<ans;
+    return 0;
+}
+
+
+
